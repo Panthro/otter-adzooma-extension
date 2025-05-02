@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Install Otter Adzooma Chrome Extension</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 700px; margin: 2rem auto; padding: 1rem; background: #f9f9f9; color: #222; }
+    h1, h2 { color: #4b2995; }
+    pre, code { background: #f3f3f3; padding: 0.2em 0.4em; border-radius: 4px; }
+    .step { margin-bottom: 1.5em; }
+    .download { display: inline-block; margin: 0.5em 0; padding: 0.5em 1em; background: #4b2995; color: #fff; border-radius: 4px; text-decoration: none; }
+    .note { background: #ede9fe; padding: 0.7em 1em; border-radius: 4px; margin: 1em 0; }
+  </style>
+</head>
+<body>
+  <h1>Install Otter Adzooma Chrome Extension</h1>
+  <p>This extension enhances the Adzooma dashboard with advanced reporting and charts. It is distributed privately and will auto-update from this site.</p>
+
+  <div class="note">
+    <b>Note:</b> This extension is not in the Chrome Web Store. You must follow these steps for installation and auto-updates.
+  </div>
+
+  <div class="step">
+    <h2>Step 1: Download the Extension</h2>
+    <a class="download" href="./otter-adzooma.crx">Download otter-adzooma.crx</a>
+    <p>Save this file to your computer.</p>
+  </div>
+
+  <div class="step">
+    <h2>Step 2: Download the Update JSON File</h2>
+    <a class="download" href="./otter-adzooma-update.json" download>Download otter-adzooma-update.json</a>
+    <p>This file tells Chrome where to check for updates. <b>After your first install, update the filename to match your extension ID (see below).</b></p>
+    <p>The file content should look like:</p>
+    <pre><code>{
+  "external_update_url": "https://panthro.github.io/otter-adzooma-extension/update.xml"
+}</code></pre>
+  </div>
+
+  <div class="step">
+    <h2>Step 3: Place the JSON File</h2>
+    <p>Move the JSON file to the Chrome External Extensions directory:</p>
+    <ul>
+      <li><b>Windows:</b> <code>C:\Users\&lt;your-user&gt;\AppData\Local\Google\Chrome\User Data\External Extensions\</code></li>
+      <li><b>macOS/Linux:</b> <code>~/Library/Application Support/Google/Chrome/External Extensions/</code></li>
+    </ul>
+    <p>Rename the file to <code>&lt;your-extension-id&gt;.json</code> (replace <code>&lt;your-extension-id&gt;</code> with the actual ID from <code>chrome://extensions/</code> after first install).</p>
+  </div>
+
+  <div class="step">
+    <h2>Step 4: Install the Extension</h2>
+    <ol>
+      <li>Open <code>chrome://extensions/</code> in Chrome.</li>
+      <li>Enable <b>Developer mode</b> (top right).</li>
+      <li>Drag and drop <b>otter-adzooma.crx</b> onto the page to install.</li>
+      <li>After install, find your extension's ID and rename the JSON file as described above.</li>
+      <li>Restart Chrome (<code>chrome://restart</code> in the address bar).</li>
+    </ol>
+  </div>
+
+  <div class="step">
+    <h2>How Auto-Update Works</h2>
+    <p>Chrome will periodically check <code>https://panthro.github.io/otter-adzooma-extension/update.xml</code> for updates. When a new version is published, your extension will update automatically.</p>
+  </div>
+
+  <div class="step">
+    <h2>Troubleshooting</h2>
+    <ul>
+      <li>If the extension does not appear, double-check the JSON file location and name.</li>
+      <li>Make sure you restart Chrome after placing the JSON file.</li>
+      <li>Contact your team lead if you have issues.</li>
+    </ul>
+  </div>
+
+  <footer style="margin-top:2em; color:#888; font-size:0.95em;">&copy; 2024 Otter Adzooma Team</footer>
+</body>
+</html> 
