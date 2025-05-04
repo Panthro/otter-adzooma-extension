@@ -19,5 +19,5 @@ All notable changes to this project will be documented in this file.
 - initial implementatnion with working charts (bf6e052)
 
 
-## [1.0.250504.51885+00c6753] - 2025-05-04
-- Enhance GitHub Actions workflow (00c6753)
+## [1.0.250504.51991+332f4e7] - 2025-05-04
+- Refactor version output in GitHub Actions workflow for improved readability (332f4e7)
