@@ -21,18 +21,17 @@
     <b>Note:</b> This extension is not in the Chrome Web Store. You must follow these steps for installation and auto-updates.
   </div>
 
-  <div class="step">
+  <div class="step" style="margin-bottom:2.5em;">
     <h2>Step 1: Download the Extension</h2>
-    <a class="download" href="./extension.zip">Download extension.zip</a>
-    <p>Save this file to your computer and extract it.</p>
+    <a class="download" href="./extension.zip">Download Latest extension.zip</a>
   </div>
 
-  <div class="step">
+  <div class="step" style="margin-bottom:2.5em;">
     <h2>Step 2: Install the Extension in Chrome</h2>
     <ol>
       <li>
         Open <code id="chrome-extensions-url">chrome://extensions</code>
-        <button id="copy-extensions-url" aria-label="Copy chrome://extensions" style="background:none;border:none;cursor:pointer;vertical-align:middle;padding:0 0.2em;">
+        <button id="copy-extensions-url" aria-label="Copy chrome://extensions" title="Copy to clipboard" style="background:none;border:none;cursor:pointer;vertical-align:middle;padding:0 0.2em;">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="vertical-align:middle;">
             <title>Copy</title>
             <rect x="9" y="9" width="13" height="13" rx="2" stroke="#4b2995" stroke-width="2" fill="none"/>
@@ -46,7 +45,7 @@
     </ol>
   </div>
 
-  <div class="step">
+  <div class="step" style="margin-bottom:2.5em;">
     <h2>How to Manually Update the Extension</h2>
     <p>
       When a new version is published, you will need to <b>download</b> and <b>install</b> the latest <code>extension.zip</code> from this page.<br>
@@ -54,7 +53,24 @@
     </p>
   </div>
 
-  <div class="step">
+  <div class="step" style="margin-bottom:2.5em;">
+    <h2>Current Version</h2>
+    <p>
+      <b>Latest version:</b> <span id="latest-version">2025.5.5.1312+203cab8</span>
+      <br>
+      <small>
+        <b>How to check your installed version:</b>
+        <ol style="margin:0.5em 0 0 1.5em;">
+          <li>Go to <code>chrome://extensions</code> in Chrome.</li>
+          <li>Find <b><code>Otter Adzooma Chrome Extension</code></b> in the list.</li>
+          <li>Click <b>Details</b> and look for the <b>Version</b> field.</li>
+          <li>If your version is lower than <span id="latest-version-inline">2025.5.5.1312+203cab8</span>, please download and install the latest <b>extension.zip</b> above.</li>
+        </ol>
+      </small>
+    </p>
+  </div>
+
+  <div class="step" style="margin-bottom:2.5em;">
     <h2>Troubleshooting</h2>
     <ul>
       <li>If you see an error when loading the extension, make sure you are dragging and dropping the <b>extension.zip</b> file directly into Chrome.</li>
@@ -77,6 +93,7 @@
         });
       });
     }
+    document.getElementById('latest-version-inline').textContent = document.getElementById('latest-version').textContent;
   </script>
 </body>
 </html> 
