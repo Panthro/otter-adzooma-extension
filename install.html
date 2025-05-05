@@ -30,26 +30,53 @@
   <div class="step">
     <h2>Step 2: Install the Extension in Chrome</h2>
     <ol>
-      <li>Open <a href="chrome://extensions" target="_blank">chrome://extensions</a> in Chrome.</li>
+      <li>
+        Open <code id="chrome-extensions-url">chrome://extensions</code>
+        <button id="copy-extensions-url" aria-label="Copy chrome://extensions" style="background:none;border:none;cursor:pointer;vertical-align:middle;padding:0 0.2em;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="vertical-align:middle;">
+            <title>Copy</title>
+            <rect x="9" y="9" width="13" height="13" rx="2" stroke="#4b2995" stroke-width="2" fill="none"/>
+            <rect x="3" y="3" width="13" height="13" rx="2" stroke="#4b2995" stroke-width="2" fill="none"/>
+          </svg>
+        </button>
+        in Chrome. <span id="copy-feedback" style="font-size:0.95em;color:#4b2995;display:none;">Copied!</span> (Copy and paste this into your address bar.)
+      </li>
       <li>Enable <b>Developer mode</b> (top right).</li>
       <li>Drag and drop the downloaded <b>extension.zip</b> file onto the Chrome extensions page.</li>
     </ol>
   </div>
 
   <div class="step">
-    <h2>How Auto-Update Works</h2>
-    <p>When a new version is published, you will need to download and install the latest <code>extension.zip</code> from this page. (Automatic updates are not available for unpacked extensions.)</p>
+    <h2>How to Manually Update the Extension</h2>
+    <p>
+      When a new version is published, you will need to <b>download</b> and <b>install</b> the latest <code>extension.zip</code> from this page.<br>
+      <span style="color:#b91c1c;">Note:</span> Automatic updates are <b>not</b> available for unpacked extensions. To update, simply repeat the installation steps above with the new file.
+    </p>
   </div>
 
   <div class="step">
     <h2>Troubleshooting</h2>
     <ul>
-      <li>If the extension does not appear, double-check that you selected the correct <b>build</b> directory.</li>
-      <li>Make sure you remove any previous version before loading a new one.</li>
-      <li>Contact your team lead if you have issues.</li>
+      <li>If you see an error when loading the extension, make sure you are dragging and dropping the <b>extension.zip</b> file directly into Chrome.</li>
+      <li>Ensure <b>Developer mode</b> is enabled in the top right of the <code>chrome://extensions</code> page.</li>
+      <li>If the extension does not appear after installation, try refreshing the <code>chrome://extensions</code> page or restarting Chrome.</li>
+      <li>If you continue to have issues, contact your team lead for support.</li>
     </ul>
   </div>
 
   <footer style="margin-top:2em; color:#888; font-size:0.95em;">&copy; 2024 Otternative Team</footer>
+  <script>
+    const copyBtn = document.getElementById('copy-extensions-url');
+    const urlCode = document.getElementById('chrome-extensions-url');
+    const feedback = document.getElementById('copy-feedback');
+    if (copyBtn && urlCode && feedback) {
+      copyBtn.addEventListener('click', () => {
+        navigator.clipboard.writeText(urlCode.textContent.trim()).then(() => {
+          feedback.style.display = 'inline';
+          setTimeout(() => { feedback.style.display = 'none'; }, 1200);
+        });
+      });
+    }
+  </script>
 </body>
 </html> 
